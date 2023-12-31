@@ -23,7 +23,7 @@ const sendMessageGPT = (question) => {
       console.log("\n");
       console.log("----------------------------------------------------------");
       // responseMessageWhats(response.choices[0].message.content)
-      return response;
+      return response.choices[0].message.content;
     })
     .catch((error) => {
       throw error;
@@ -48,10 +48,10 @@ const responseMessageWhats = (messageResponse) => {
     .then((response) => {
       console.log('----------------------------------------------------------');
       console.log('\n');
-      console.log('Resposta do chatGPT: ', response);
+      console.log('Resposta do chatGPT para Whats: ', response.data);
       console.log('\n');
       console.log('----------------------------------------------------------');
-      return response;
+      return response.data;
     })
     .catch((err) => {
       console.error('Erro ao enviar mensagem:');

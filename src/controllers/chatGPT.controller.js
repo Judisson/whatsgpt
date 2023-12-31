@@ -3,10 +3,11 @@ const { sendMessageGPT, responseMessageWhats } = require("../class/instance");
 exports.QuestionToGPT = (req, res) => {
   sendMessageGPT(req.body.question)
     .then((response) => {
-      responseMessageWhats(response.choices[0].message.content)
+      const responseToSend = {response}
+      responseMessageWhats(response)
       return res
         .status(200)
-        .json({ resposta: response.choices[0].message.content });
+        .json(responseToSend);
     })
     .catch((err) => {
       console.error("erro: ", err);
