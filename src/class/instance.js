@@ -17,19 +17,11 @@ const sendMessageGPT = (question) => {
       ],
     })
     .then((response) => {
-      console.log("----------------------------------------------------------");
-      console.log("\n");
-      console.log("Resposta do chatGPT: ", response.choices[0].message.content);
-      console.log("\n");
-      console.log("----------------------------------------------------------");
-      // responseMessageWhats(response.choices[0].message.content)
       return response.choices[0].message.content;
     })
     .catch((error) => {
       throw error;
     });
-
-
 };
 
 const responseMessageWhats = (messageResponse) => {
@@ -46,11 +38,6 @@ const responseMessageWhats = (messageResponse) => {
       }
     )
     .then((response) => {
-      console.log('----------------------------------------------------------');
-      console.log('\n');
-      console.log('Resposta do chatGPT para Whats: ', response.data);
-      console.log('\n');
-      console.log('----------------------------------------------------------');
       return response.data;
     })
     .catch((err) => {
