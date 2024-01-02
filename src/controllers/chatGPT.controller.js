@@ -1,9 +1,10 @@
 const { sendMessageGPT, responseMessageWhats } = require("../class/instance");
 
 exports.QuestionToGPT = (req, res) => {
-  sendMessageGPT(req.body.question)
+  sendMessageGPT(req.body)
     .then((response) => {
       const responseToSend = {response}
+      console.log("7 - responseToSend:", response)
       responseMessageWhats(response)
       return res
         .status(200)
