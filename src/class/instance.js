@@ -53,7 +53,7 @@ const responseMessageWhats = async (objMessageResponse) => {
       }
     )
     .then((response) => {
-      console.log("56 - response: ", response.data);
+      console.log("56 - response: ", response);
       console.log("\n");
       console.log("----------------------------------------------------------");
       console.log("\n");
